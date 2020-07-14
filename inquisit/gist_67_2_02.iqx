@@ -214,7 +214,7 @@ Note: this picture element controls the selection of the to be presented picture
 if a sequential order is preferred => /select = sequential
 
 <picture gdg_67soa>
-/items = picset_67_1
+/items = picset_67_2_02
 /select = noreplacenorepeat
 /position = (50%, 50%)
 / width = 100
@@ -371,7 +371,6 @@ Note: The following represents five masks to be used after the picture stimulus
 / position = (values.first_col, values.textbox_offset - 11)
 / fontstyle = ("Arial", 1.5%, false, false, false, false, 5, 0)
 </caption>
-
 
 **************************************************************************************************************
 **************************************************************************************************************
@@ -551,6 +550,7 @@ NOTE: The 11 questions onwards are text to be displayed.
 **************************************************************************************************************
 
 
+
 <trial pic_67soa>
 / stimulustimes = [
 	0 = fixation_cross;
@@ -643,6 +643,7 @@ NOTE: The 11 questions onwards are text to be displayed.
 / trials = [1=Calibration_instruction_page1]
 / screencolor = white
 </block>
+
 
 <block completion>
 /trials = [1=mturk_completion_code]

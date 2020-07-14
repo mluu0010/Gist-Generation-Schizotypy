@@ -167,8 +167,10 @@ raw data
 
 <data>
 / separatefiles = true
-/ columns = (build, date, time, subject, blockcode, blocknum, trialcode, trialnum, stimulusonset, values.est_soa, values.est_soa2, values.est_soa3, values.est_soa4, values.est_soa5, values.img_num, values.img_file, values.soa, values.completion_code, response, latency)
+/ columns = (build, date, time, subject, blockcode, blocknum, trialcode, trialnum, stimulusonset, values.est_soa, values.est_soa2, values.est_soa3, values.est_soa4, values.est_soa5, values.img_num, values.img_file, values.soa, values.completion_code, response, latency,
+values.OLIFE_subscale_1_score, values.OLIFE_subscale_2_score, values.OLIFE_subscale_3_score, values.OLIFE_subscale_4_score)
 </data>
+
 
 ********************
 summary data
@@ -211,8 +213,8 @@ Note: this picture element controls the selection of the to be presented picture
 /select = noreplace => selects the pictures randomly without replacement
 if a sequential order is preferred => /select = sequential
 
-<picture gdg_133soa>
-/items = items_133soa
+<picture gdg_67soa>
+/items = picset_67_1_02
 /select = noreplacenorepeat
 /position = (50%, 50%)
 / width = 100
@@ -232,8 +234,7 @@ if a sequential order is preferred => /select = sequential
 
 Note: The following represents five masks to be used after the picture stimulus
 <picture mask1>
-/items = masks
-/select = noreplacenorepeat
+/items = ("mask_050.jpg")
 /position = (50%, 50%)
 / width = 100
 / height = 100
@@ -241,8 +242,7 @@ Note: The following represents five masks to be used after the picture stimulus
 </picture>
 
 <picture mask2>
-/items = masks
-/select = noreplacenorepeat
+/items = ("mask_056.jpg")
 /position = (50%, 50%)
 / width = 100
 / height = 100
@@ -250,8 +250,7 @@ Note: The following represents five masks to be used after the picture stimulus
 </picture>
 
 <picture mask3>
-/items = masks
-/select = noreplacenorepeat
+/items = ("mask_011.jpg")
 /position = (50%, 50%)
 / width = 100
 / height = 100
@@ -259,8 +258,7 @@ Note: The following represents five masks to be used after the picture stimulus
 </picture>
 
 <picture mask4>
-/items = masks
-/select = noreplacenorepeat
+/items = ("mask_072.jpg")
 /position = (50%, 50%)
 / width = 100
 / height = 100
@@ -268,8 +266,7 @@ Note: The following represents five masks to be used after the picture stimulus
 </picture>
 
 <picture mask5>
-/items = masks
-/select = noreplacenorepeat
+/items = ("mask_128.jpg")
 /position = (50%, 50%)
 / width = 100
 / height = 100	
@@ -375,6 +372,7 @@ Note: The following represents five masks to be used after the picture stimulus
 / fontstyle = ("Arial", 1.5%, false, false, false, false, 5, 0)
 </caption>
 
+
 **************************************************************************************************************
 **************************************************************************************************************
 	TRIALS
@@ -392,10 +390,15 @@ Note: The following represents five masks to be used after the picture stimulus
 /radiobuttons_offset = values.textbox_offset
 /radiobuttons_gap = 5
 /radiobuttons_textsize = 2%
+
+/OLIFE_subscale_1_score = 0
+/OLIFE_subscale_2_score = 0
+/OLIFE_subscale_3_score = 0
+/OLIFE_subscale_4_score = 0
 </values>
 
 <include>
-/ file = "Calibration.iqx"
+/ file = "calibration.iqx"
 </include>
 
 <include>
@@ -437,96 +440,6 @@ NOTE: The 11 questions onwards are text to be displayed.
 / response = correct
 / finishlabel = "Complete"
 </surveypage>
-
-<surveypage schizotypy_PG1>
-/ caption = "You have completed the trials. We would now like you to complete our questionnaire."
-/ fontstyle = ("Arial", 3%, true)
-/ itemfontstyle = ("Arial", 2%, false, true, false, false, 5, 0)
-/ itemspacing = 7%
-/ showquestionnumbers = false
-/ showpagenumbers = false
-/ questions = [1=OLIFE1; 2=OLIFE2; 3=OLIFE3; 4=OLIFE4; 5=OLIFE5; 6=OLIFE6]
-/ navigationbuttonsize = (13, 4)
-/ navigationbuttonfontstyle = ("Arial", 2%, true, false, false, false, 5, 0)
-/ nextbuttonposition = (85%, 83%)
-/ response = correct
-</surveypage>
-
-<surveypage schizotypy_PG2>
-/ itemfontstyle = ("Arial", 2%, false, true, false, false, 5, 0)
-/ itemspacing = 7%
-/ showquestionnumbers = false
-/ showpagenumbers = false
-/ questions = [1=OLIFE7; 2=OLIFE8; 3=OLIFE9; 4=OLIFE10; 5=OLIFE11; 6=OLIFE12]
-/ navigationbuttonsize = (13, 4)
-/ navigationbuttonfontstyle = ("Arial", 2%, true, false, false, false, 5, 0)
-/ nextbuttonposition = (85%, 83%)
-/ response = correct
-</surveypage>
-
-<surveypage schizotypy_PG3>
-/ itemfontstyle = ("Arial", 2%, false, true, false, false, 5, 0)
-/ itemspacing = 7%
-/ showquestionnumbers = false
-/ showpagenumbers = false
-/ questions = [1=OLIFE13; 2=OLIFE14; 3=OLIFE15; 4=OLIFE16; 5=OLIFE17; 6=OLIFE18]
-/ navigationbuttonsize = (13, 4)
-/ navigationbuttonfontstyle = ("Arial", 2%, true, false, false, false, 5, 0)
-/ nextbuttonposition = (85%, 83%)
-/ response = correct
-</surveypage>
-
-<surveypage schizotypy_PG4>
-/ itemfontstyle = ("Arial", 2%, false, true, false, false, 5, 0)
-/ itemspacing = 7%
-/ showquestionnumbers = false
-/ showpagenumbers = false
-/ questions = [1=OLIFE19; 2=OLIFE20; 3=OLIFE21; 4=OLIFE22; 5=OLIFE23; 6=OLIFE24]
-/ navigationbuttonsize = (13, 4)
-/ navigationbuttonfontstyle = ("Arial", 2%, true, false, false, false, 5, 0)
-/ nextbuttonposition = (85%, 83%)
-/ response = correct
-</surveypage>
-
-<surveypage schizotypy_PG5>
-/ itemfontstyle = ("Arial", 2%, false, true, false, false, 5, 0)
-/ itemspacing = 7%
-/ showquestionnumbers = false
-/ showpagenumbers = false
-/ questions = [1=OLIFE25; 2=OLIFE26; 3=OLIFE27; 4=OLIFE28; 5=OLIFE29; 6=OLIFE30]
-/ navigationbuttonsize = (13, 4)
-/ navigationbuttonfontstyle = ("Arial", 2%, true, false, false, false, 5, 0)
-/ nextbuttonposition = (85%, 83%)
-/ response = correct
-</surveypage>
-
-
-<surveypage schizotypy_PG6>
-/ itemfontstyle = ("Arial", 2%, false, true, false, false, 5, 0)
-/ itemspacing = 7%
-/ showquestionnumbers = false
-/ showpagenumbers = false
-/ questions = [1=OLIFE31; 2=OLIFE32; 3=OLIFE33; 4=OLIFE34; 5=OLIFE35; 6=OLIFE36]
-/ navigationbuttonsize = (13, 4)
-/ navigationbuttonfontstyle = ("Arial", 2%, true, false, false, false, 5, 0)
-/ nextbuttonposition = (85%, 83%)
-/ response = correct
-</surveypage>
-
-
-<surveypage schizotypy_PG7>
-/ itemfontstyle = ("Arial", 2%, false, true, false, false, 5, 0)
-/ itemspacing = 6%
-/ showquestionnumbers = false
-/ showpagenumbers = false
-/ questions = [1=OLIFE37; 2=OLIFE38; 3=OLIFE39; 4=OLIFE40; 5=OLIFE41; 6=OLIFE42; 7=OLIFE43]
-/ navigationbuttonsize = (13, 4)
-/ navigationbuttonfontstyle = ("Arial", 2%, true, false, false, false, 5, 0)
-/ nextbuttonposition = (85%, 83%)
-/ response = correct
-/ finishlabel = "Complete"
-</surveypage>
-
 
 <trial error>
 / stimulusframes = [1 = survey_error]
@@ -638,24 +551,23 @@ NOTE: The 11 questions onwards are text to be displayed.
 **************************************************************************************************************
 
 
-
-<trial pic_133soa>
+<trial pic_67soa>
 / stimulustimes = [
 	0 = fixation_cross;
-	1000 = gdg_133soa;
-	1133 = mask1;
-	1193 = mask2;
-	1253 = mask3;
-	1313 = mask4;
-	1373 = mask5;
+	1000 = gdg_67soa;
+	1067 = mask1;
+	1127 = mask2;
+	1187 = mask3;
+	1247 = mask4;
+	1307 = mask5;
 ]
-/ timeout = parameters.fixationduration + 133 + (5 * 60)
+/ timeout = parameters.fixationduration + 67 + (5 * 60)
 /branch = [surveypage.word_generation]
 /ontrialend = [
-	values.img_num = picture.gdg_133soa.currentvalue;
-	values.img_file = picture.gdg_133soa.currentitem;
-	values.soa = 133;
-	values.est_soa = picture.mask1.stimulusonset.1 - picture.gdg_133soa.stimulusonset.1;
+	values.img_num = picture.gdg_67soa.currentvalue;
+	values.img_file = picture.gdg_67soa.currentitem;
+	values.soa = 67;
+	values.est_soa = picture.mask1.stimulusonset.1 - picture.gdg_67soa.stimulusonset.1;
 	values.est_soa2 = picture.mask2.stimulusonset.1 - picture.mask1.stimulusonset.1;
 	values.est_soa3 = picture.mask3.stimulusonset.1 - picture.mask2.stimulusonset.1;
 	values.est_soa4 = picture.mask4.stimulusonset.1 - picture.mask3.stimulusonset.1;
@@ -713,7 +625,7 @@ NOTE: The 11 questions onwards are text to be displayed.
 </include>
 
 <include>
-/file = "include_blocks_standard.iqx"
+/file = "include_blocks_standard_67.iqx"
 / precondition = [script.subjectid != 100]
 </include>
 
@@ -743,9 +655,12 @@ NOTE: The 11 questions onwards are text to be displayed.
 / skip = [parameters.show_completion_block == false]
 </block>
 
-<block schizotypy>
-/ trials = [1=surveypage.schizotypy_PG1; 2=surveypage.schizotypy_PG2; 3=surveypage.schizotypy_PG3; 4=surveypage.schizotypy_PG4;
-5=surveypage.schizotypy_PG5; 6=surveypage.schizotypy_PG6; 7=surveypage.schizotypy_PG7]
+<block schizotypy_survey>
+/ trials = [1=schizotypy_Q1; 2=schizotypy_Q2; 3=schizotypy_Q3; 4=schizotypy_Q4; 5=schizotypy_Q5; 6=schizotypy_Q6; 7=schizotypy_Q7; 8=schizotypy_Q8; 9=schizotypy_Q9;
+10=schizotypy_Q10; 11=schizotypy_Q11; 12=schizotypy_Q12; 13=schizotypy_Q13; 14=schizotypy_Q14; 15=schizotypy_Q15; 16=schizotypy_Q16; 17=schizotypy_Q17; 18=schizotypy_Q18; 
+19=schizotypy_Q19; 20=schizotypy_Q20; 21=schizotypy_Q21; 22=schizotypy_Q22; 23=schizotypy_Q23; 24=schizotypy_Q24; 25=schizotypy_Q25; 26=schizotypy_Q26; 27=schizotypy_Q27; 
+28=schizotypy_Q28; 29=schizotypy_Q29; 30=schizotypy_Q30; 31=schizotypy_Q31; 32=schizotypy_Q32; 33=schizotypy_Q33; 34=schizotypy_Q34; 35=schizotypy_Q35; 36=schizotypy_Q36; 
+37=schizotypy_Q37; 38=schizotypy_Q38; 39=schizotypy_Q39; 40=schizotypy_Q40; 41=schizotypy_Q41; 42=schizotypy_Q42; 43=schizotypy_Q43]
 </block>
 
 <block demographics>
@@ -764,7 +679,7 @@ NOTE: /blocks = [1 = intro; 2 = consent; 3 = practice_block; 4 = block1; 5 = dem
 
 <expt>
 /onexptend = [values.completed = 1]
-/blocks = [ 1 = intro; 2 = consent; 3 = calibration; 4 = practice_block; 5 = block1; 6 = schizotypy; 7 = demographics; 8 = completion_block; 9 = completion]
+/blocks = [ 1 = intro; 2 = consent; 3 = calibration; 4 = practice_block; 5 = block1; 6 = schizotypy_survey; 7 = demographics; 8 = completion_block; 9 = completion]
 </expt>
 
 **************************************************************************************************************
