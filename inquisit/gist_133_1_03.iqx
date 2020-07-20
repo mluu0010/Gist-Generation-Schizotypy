@@ -213,7 +213,7 @@ Note: this picture element controls the selection of the to be presented picture
 if a sequential order is preferred => /select = sequential
 
 <picture gdg_133soa>
-/items = picset_133_1_02
+/items = picset_133_1_03
 /select = noreplacenorepeat
 /position = (50%, 50%)
 / width = 100

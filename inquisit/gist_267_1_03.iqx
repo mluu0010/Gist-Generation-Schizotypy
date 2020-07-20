@@ -171,6 +171,7 @@ raw data
 values.OLIFE_subscale_1_score, values.OLIFE_subscale_2_score, values.OLIFE_subscale_3_score, values.OLIFE_subscale_4_score)
 </data>
 
+
 ********************
 summary data
 ********************
@@ -212,8 +213,8 @@ Note: this picture element controls the selection of the to be presented picture
 /select = noreplace => selects the pictures randomly without replacement
 if a sequential order is preferred => /select = sequential
 
-<picture gdg_133soa>
-/items = picset_133_1_02
+<picture gdg_267soa>
+/items = picset_267_1_03
 /select = noreplacenorepeat
 /position = (50%, 50%)
 / width = 100
@@ -396,7 +397,7 @@ Note: The following represents five masks to be used after the picture stimulus
 </values>
 
 <include>
-/ file = "Calibration.iqx"
+/ file = "calibration.iqx"
 </include>
 
 <include>
@@ -550,23 +551,23 @@ NOTE: The 11 questions onwards are text to be displayed.
 
 
 
-<trial pic_133soa>
+<trial pic_267soa>
 / stimulustimes = [
 	0 = fixation_cross;
-	1000 = gdg_133soa;
-	1133 = mask1;
-	1193 = mask2;
-	1253 = mask3;
-	1313 = mask4;
-	1373 = mask5;
+	1000 = gdg_267soa;
+	1267 = mask1;
+	1327 = mask2;
+	1387 = mask3;
+	1447 = mask4;
+	1507 = mask5;
 ]
-/ timeout = parameters.fixationduration + 133 + (5 * 60)
+/ timeout = parameters.fixationduration + 267 + (5 * 60)
 /branch = [surveypage.word_generation]
 /ontrialend = [
-	values.img_num = picture.gdg_133soa.currentvalue;
-	values.img_file = picture.gdg_133soa.currentitem;
-	values.soa = 133;
-	values.est_soa = picture.mask1.stimulusonset.1 - picture.gdg_133soa.stimulusonset.1;
+	values.img_num = picture.gdg_267soa.currentvalue;
+	values.img_file = picture.gdg_267soa.currentitem;
+	values.soa = 267;
+	values.est_soa = values.est_soa = picture.mask1.stimulusonset.1 - picture.gdg_267soa.stimulusonset.1;
 	values.est_soa2 = picture.mask2.stimulusonset.1 - picture.mask1.stimulusonset.1;
 	values.est_soa3 = picture.mask3.stimulusonset.1 - picture.mask2.stimulusonset.1;
 	values.est_soa4 = picture.mask4.stimulusonset.1 - picture.mask3.stimulusonset.1;
@@ -624,7 +625,7 @@ NOTE: The 11 questions onwards are text to be displayed.
 </include>
 
 <include>
-/file = "include_blocks_standard.iqx"
+/file = "include_blocks_standard_267.iqx"
 / precondition = [script.subjectid != 100]
 </include>
 
